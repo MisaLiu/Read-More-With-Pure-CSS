@@ -1,0 +1,38 @@
+div {
+    position: relative;
+}
+
+div input {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 12px;
+    background: linear-gradient(0deg, #fff 42%, rgba(255, 255, 255, 0) 100%);
+    text-align: center;
+    border: none;
+    outline: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+div input::before {
+    content: 'Read More';
+    font-size: 1.5em;
+}
+
+div input+article {
+    height: 250px;
+    overflow-y: hidden;
+}
+
+div input:checked::before {
+    content: '';
+    display: none;
+}
+
+div input:checked+article {
+    height: auto;
+    overflow-y: auto;
+}
