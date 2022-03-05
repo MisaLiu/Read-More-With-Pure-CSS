@@ -6,19 +6,22 @@ div input {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 100%;
+    width: 100% !important;
+    height: auto !important;
     margin: 0;
     padding: 12px;
     background: linear-gradient(0deg, #fff 42%, rgba(255, 255, 255, 0) 100%);
     text-align: center;
-    border: none;
-    outline: none;
-    appearance: none;
+    border: none !important;
+    outline: none !important;
+    appearance: none !important;
+    box-shadow: none !important;
     cursor: pointer;
 }
 
 div input::before {
     content: 'Read More';
+    color: #000 !important;
     font-size: 1.5em;
 }
 
@@ -27,9 +30,12 @@ div input+article {
     overflow-y: hidden;
 }
 
+div input:checked {
+    display: none !important;
+}
+
 div input:checked::before {
     content: '';
-    display: none;
 }
 
 div input:checked+article {
